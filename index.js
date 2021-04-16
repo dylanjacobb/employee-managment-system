@@ -1,5 +1,6 @@
 const mysql = require('mysql');
 const inquirer = require('inquirer');
+const consoleTable = require('console.table');
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -69,7 +70,7 @@ const startPrompts = () => {
         })
 }
 
-// ------------FIXME:------------
+// --------------FIXME:-----------------
 const viewAllEmployees = () => {
     connection.query('SELECT * FROM employeeTable', (err, res) => {
         if (err) throw err;
